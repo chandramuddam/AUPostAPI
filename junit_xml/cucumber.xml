@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="3.439641">
+<testcase classname="Australia post API scenarios" name="Validate the domestic parcel postage cost for the given post codes and service code" time="2.963595">
+<system-out><![CDATA[Given I find the first from post code for the suburb "Pendle Hill" and state "NSW".passed
+And I find the first to post code for the suburb "Strathfield" and state "NSW".passed
+And I find the first service code for the item length "10" width "10" thickness "10" weight "1".passed
+When I build the API request to calculate the postage cost for service code and length "10" width "10" height "10" weight "1".passed
+Then I validate the postage cost as "6.70"..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Australia post API scenarios" name="Validate the list of domestic letter thickness values" time="0.234237">
+<system-out><![CDATA[Given I build the API request for a list of domestic letter thickness values.passed
+Then I validate the letter thickness values "5" and "20"....................passed
+]]></system-out>
+</testcase>
+<testcase classname="Australia post API scenarios" name="Validate the international parcel services for the country New Zealand" time="0.241809">
+<system-out><![CDATA[Given I have "NZ" as country code...........................................passed
+And I have "1" as weight....................................................passed
+When I build the API request for international parcel services for New Zealand.passed
+Then I validate the international parcel services for New Zealand...........passed
+]]></system-out>
+</testcase>
+</testsuite>

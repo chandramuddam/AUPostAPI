@@ -1,0 +1,258 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Validate the domestic parcel postage cost for the given post codes and service code",
+        "description": "",
+        "id": "australia-post-api-scenarios;validate-the-domestic-parcel-postage-cost-for-the-given-post-codes-and-service-code",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2204289196,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I find the first from post code for the suburb \"Pendle Hill\" and state \"NSW\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Pendle Hill",
+                  "offset": 48
+                },
+                {
+                  "val": "NSW",
+                  "offset": 72
+                }
+              ],
+              "location": "AUPostStepDefinition.getFromPostCode(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 203149143,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I find the first to post code for the suburb \"Strathfield\" and state \"NSW\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Strathfield",
+                  "offset": 46
+                },
+                {
+                  "val": "NSW",
+                  "offset": 70
+                }
+              ],
+              "location": "AUPostStepDefinition.getToPostCode(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 262882493,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I find the first service code for the item length \"10\" width \"10\" thickness \"10\" weight \"1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 51
+                },
+                {
+                  "val": "10",
+                  "offset": 62
+                },
+                {
+                  "val": "10",
+                  "offset": 77
+                },
+                {
+                  "val": "1",
+                  "offset": 89
+                }
+              ],
+              "location": "AUPostStepDefinition.getServiceCode(String,String,String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 290124313,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I build the API request to calculate the postage cost for service code and length \"10\" width \"10\" height \"10\" weight \"1\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 83
+                },
+                {
+                  "val": "10",
+                  "offset": 94
+                },
+                {
+                  "val": "10",
+                  "offset": 106
+                },
+                {
+                  "val": "1",
+                  "offset": 118
+                }
+              ],
+              "location": "AUPostStepDefinition.buildPostageCostAPIRequestByServiceCode(String,String,String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3149370,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I validate the postage cost as \"6.70\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "6.70",
+                  "offset": 32
+                }
+              ],
+              "location": "AUPostStepDefinition.postageCost(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 10,
+        "name": "Validate the list of domestic letter thickness values",
+        "description": "",
+        "id": "australia-post-api-scenarios;validate-the-list-of-domestic-letter-thickness-values",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 232722270,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I build the API request for a list of domestic letter thickness values",
+            "match": {
+              "location": "AUPostStepDefinition.buildLetterThicknessValuesAPIRequest()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1514952,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I validate the letter thickness values \"5\" and \"20\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 40
+                },
+                {
+                  "val": "20",
+                  "offset": 48
+                }
+              ],
+              "location": "AUPostStepDefinition.letterThicknessValues(int,int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 14,
+        "name": "Validate the international parcel services for the country New Zealand",
+        "description": "",
+        "id": "australia-post-api-scenarios;validate-the-international-parcel-services-for-the-country-new-zealand",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 190578,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I have \"NZ\" as country code",
+            "match": {
+              "arguments": [
+                {
+                  "val": "NZ",
+                  "offset": 8
+                }
+              ],
+              "location": "AUPostStepDefinition.countryCode(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 174080,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I have \"1\" as weight",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 8
+                }
+              ],
+              "location": "AUPostStepDefinition.countryCode(float)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 240648602,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I build the API request for international parcel services for New Zealand",
+            "match": {
+              "location": "AUPostStepDefinition.buildInternationalParcelServicesNZAPIRequest()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 795307,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I validate the international parcel services for New Zealand",
+            "match": {
+              "location": "AUPostStepDefinition.internationalParcelServicesNZ()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Australia post API scenarios",
+    "description": "",
+    "id": "australia-post-api-scenarios",
+    "keyword": "Feature",
+    "uri": "src/test/java/com/aupost/features/aupostapi.feature"
+  }
+]
